@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - To-Do App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="header-top">
+                <h1> TaskMaster</h1>
+                <div class="header-controls">
+                    <button id="darkModeBtn" class="icon-btn" title="Toggle Dark Mode"></button>
+                    <button id="settingsBtn" class="icon-btn" title="Settings"></button>
+                </div>
+            </div>
+            <p class="subtitle">Stay organized and productive</p>
+        </header>
+
+        <div class="progress-section">
+            <div class="progress-bar-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <span id="progressText" class="progress-text">0% Complete</span>
+        </div>
+
+        <div class="input-section">
+            <input 
+                type="text" 
+                id="taskInput" 
+                class="task-input" 
+                placeholder="What needs to be done?"
+                autocomplete="off"
+            >
+            <select id="prioritySelect" class="priority-select">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+            </select>
+            <input type="date" id="dueDate" class="due-date-input">
+            <button id="addBtn" class="add-btn"> Add</button>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-icon"></span>
+                <div>
+                    <span class="stat-label">Total</span>
+                    <span id="totalTasks" class="stat-value">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon"></span>
+                <div>
+                    <span class="stat-label">Done</span>
+                    <span id="completedTasks" class="stat-value">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <span class="stat-icon"></span>
+                <div>
+                    <span class="stat-label">High Priority</span>
+                    <span id="highPriorityTasks" class="stat-value">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">All Tasks</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+            <button class="filter-btn" data-filter="high"> High Priority</button>
+        </div>
+
+        <div class="search-section">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search tasks...">
+        </div>
+
+        <div id="taskList" class="task-list">
+            <!-- Tasks will be added here -->
+        </div>
+
+        <div id="emptyState" class="empty-state">
+            <p class="empty-icon"></p>
+            <p>No tasks to show. Add one to get started!</p>
+        </div>
+
+        <div class="actions">
+            <button id="clearBtn" class="clear-btn"> Clear Completed</button>
+            <button id="undoBtn" class="undo-btn" title="Undo last action">↩ Undo</button>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
